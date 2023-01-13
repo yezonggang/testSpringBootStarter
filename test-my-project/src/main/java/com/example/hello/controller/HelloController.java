@@ -16,13 +16,19 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String sayHello(){
-        log.info("------------------------------------------------------------------- >running hello");
+        log.info("---- 模拟基于标准注解的切面过程 ---------- >running hello");
         return helloService.sayHello();
     }
     @GetMapping("/hello2")
-    @LogAnnotation(param = "HelloController")
     public String sayHello2(){
-        log.info("------------------------------------------------------------------- >running hello2");
+        log.info("---- 模拟异常后切面过程 ---------- >running hello2");
+        throw new RuntimeException();
+    }
+
+    @GetMapping("/hello3")
+    @LogAnnotation(param = "HelloController")
+    public String sayHello3(){
+        log.info("---- 模拟基于自定义注解的切面 ---------- >running hello3");
         return helloService.sayHello();
     }
 }

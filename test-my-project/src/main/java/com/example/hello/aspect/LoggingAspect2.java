@@ -17,8 +17,7 @@ import java.util.Date;
 @Aspect
 @Component
 @Slf4j
-public class LogAspect2 {
-
+public class LoggingAspect2 {
     @Around("@annotation(logAnnotation)")
     public Object around(ProceedingJoinPoint joinPoint, LogAnnotation logAnnotation) throws Throwable {
         log.info(String.format("time now :%s",new Date()));
