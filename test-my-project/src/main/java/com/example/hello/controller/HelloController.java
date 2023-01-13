@@ -16,13 +16,13 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String sayHello(){
-        log.info("running");
+        log.info("------------------------------------------------------------------- >running hello");
         return helloService.sayHello();
     }
     @GetMapping("/hello2")
     @LogAnnotation(param = "HelloController")
     public String sayHello2(){
-        log.info("running2");
+        log.info("------------------------------------------------------------------- >running hello2");
         return helloService.sayHello();
     }
 }
